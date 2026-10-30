@@ -1,0 +1,16 @@
+name: 功能建议
+description: 描述实际使用场景和期望行为
+labels: [enhancement]
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 使用场景与遇到的问题
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 期望结果与可接受的替代方案
+    validations:
+      required: true

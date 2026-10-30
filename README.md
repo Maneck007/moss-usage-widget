@@ -1,8 +1,14 @@
 # MOSS Usage Widget
 
+[![Checks](https://github.com/Maneck007/moss-usage-widget/actions/workflows/checks.yml/badge.svg)](https://github.com/Maneck007/moss-usage-widget/actions/workflows/checks.yml)
+
 Windows 桌面用量悬浮窗：在 ZCode 和 Claude 两个标签页中查看额度、本地 token 趋势与活动热力图，支持完整卡片、紧凑药丸和主题切换。
 
 公开版使用原创 Canvas 几何机器人和托盘图标。早期个人版本的 MOSS 精灵图没有随仓库分发；项目名沿用开发时的名称，与《流浪地球》、Anthropic、智谱均无官方关联。
+
+首次启动预览（未配置账号、无个人数据）：
+
+<img src="docs/first-run.png" alt="公开版首次启动界面与原创机器人" width="300">
 
 ## 安装和启动
 
@@ -63,3 +69,5 @@ npm test
 界面思路与部分样式实现参考 [yuemuqing-thu/claude-usage-widget](https://github.com/yuemuqing-thu/claude-usage-widget)，其 MIT 声明保存在 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。本仓库自有代码使用 [MIT](LICENSE)。借助 ZCode 等 AI 编程工具开发，由维护者审阅与验证。
 
 当前发布源码包，需要安装 Node.js 与依赖；尚无独立 exe 安装器。客户端接口可能变化，问题请提交 [Issue](https://github.com/Maneck007/moss-usage-widget/issues)，不要附带真实凭据或私人日志。
+
+维护和贡献流程见 [CONTRIBUTING.md](CONTRIBUTING.md)。
