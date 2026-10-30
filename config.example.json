@@ -1,0 +1,26 @@
+{
+  "bigmodelApiKey": "",
+  "claudeSessionKey": "",
+  "bigmodelBase": "https://open.bigmodel.cn",
+  "pollSec": {
+    "bigmodel": 60,
+    "claude": 300,
+    "local": 30
+  },
+  "thresholds": {
+    "amber": 60,
+    "red": 85
+  },
+  "pet": {
+    "scale": 1,
+    "speech": true
+  },
+  "installStatusline": false,
+  "followApps": false,
+  "watchProcesses": [
+    "ZCode.exe",
+    "claude.exe"
+  ],
+  "pillRotate": true,
+  "ttsWarning": false
+}

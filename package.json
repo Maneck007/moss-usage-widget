@@ -1,0 +1,23 @@
+{
+  "name": "moss-usage-widget",
+  "version": "0.1.0",
+  "description": "Windows desktop usage monitor for ZCode and Claude",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "check": "node scripts/check.js",
+    "test": "node --test"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^44.7.0"
+  },
+  "author": "Maneck007",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Maneck007/moss-usage-widget.git"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src 'self' file: data:; style-src 'self' 'unsafe-inline'">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="view-card tab-zcode">
+  <div id="app">
+    <!-- ── 展开卡片 ── -->
+    <section id="card" class="card interactive">
+      <div class="head" id="head">
+        <div id="toast"></div>
+        <div class="brand">
+          <span class="dot" id="homeDot" title="双击归位"></span>
+          <span class="srcTabs">
+            <span class="srcTab" data-tab="zcode">ZCode</span>
+            <span class="srcTab" data-tab="claude">Claude</span>
+          </span>
+        </div>
+        <div class="headRight">
+          <span class="plan" id="btnDetail" title="查看额度明细">明细</span>
+          <span class="plan" id="planTag"></span>
+          <span class="age" id="age"></span>
+          <span class="chev" id="toPill" title="收起成药丸">
+            <svg width="11" height="11" viewBox="0 0 12 12"><path d="M2.5 4.5 L6 8 L9.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- ZCode 标签页 -->
+      <div class="view" id="view-zcode">
+        <div class="detail-pop" id="detailPop">
+          <div class="plateHead"><span>额度明细</span><span class="strong" id="zLevel"></span></div>
+          <div id="zRows"></div>
+        </div>
+        <div class="rings">
+          <div class="ring">
+            <div class="ringWrap">
+              <svg width="84" height="84" viewBox="0 0 84 84">
+                <defs><linearGradient id="zg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" class="gs1"/><stop offset="100%" class="gs2"/></linearGradient></defs>
+                <circle cx="42" cy="42" r="32" class="track"/>
+                <circle cx="42" cy="42" r="32" class="prog" id="z1prog" stroke="url(#zg1)"/>
+              </svg>
+              <div class="ringVal" id="z1val">—</div>
+            </div>
+            <div class="ringLabel" id="z1label">5 小时窗口</div>
+            <div class="ringSub" id="z1sub"></div>
+          </div>
+          <div class="vline"></div>
+          <div class="ring">
+            <div class="ringWrap">
+              <svg width="84" height="84" viewBox="0 0 84 84">
+                <defs><linearGradient id="zg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" class="gs1"/><stop offset="100%" class="gs2"/></linearGradient></defs>
+                <circle cx="42" cy="42" r="32" class="track"/>
+                <circle cx="42" cy="42" r="32" class="prog" id="z2prog" stroke="url(#zg2)"/>
+              </svg>
+              <div class="ringVal" id="z2val">—</div>
+            </div>
+            <div class="ringLabel" id="z2label">周额度</div>
+            <div class="ringSub" id="z2sub"></div>
+          </div>
+        </div>
+        <div class="plate">
+          <div class="plateHead"><span>近 14 天</span><span class="strong" id="zc14sum">—</span></div>
+          <div class="bars" id="zbars"></div>
+        </div>
+        <div class="plate">
+          <div class="plateHead"><span>活动热力图</span><span class="strong" id="zheatDays" title="点击切换时间范围">91 天</span></div>
+          <div class="heatMonths" id="zheatMonths"></div>
+          <div class="heatGrid" id="zheatGrid"></div>
+          <div class="heatLegend">少<i class="hl l0"></i><i class="hl l1"></i><i class="hl l2"></i><i class="hl l3"></i><i class="hl l4"></i>多</div>
+        </div>
+        <div class="foot">
+          <div class="stat"><div class="statVal" id="zstatTok">—</div><div class="statKey">今日 token</div></div>
+          <div class="stat"><div class="statVal" id="zstatReq">—</div><div class="statKey">今日 请求</div></div>
+          <div class="stat right"><div class="statVal accent" id="zstatModel">—</div><div class="statKey" id="zstatShare"></div></div>
+        </div>
+      </div>
+
+      <!-- Claude 标签页 -->
+      <div class="view" id="view-claude">
+        <div class="rings">
+          <div class="ring">
+            <div class="ringWrap">
+              <svg width="84" height="84" viewBox="0 0 84 84">
+                <defs><linearGradient id="kg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" class="gs1"/><stop offset="100%" class="gs2"/></linearGradient></defs>
+                <circle cx="42" cy="42" r="32" class="track"/>
+                <circle cx="42" cy="42" r="32" class="prog" id="k1prog" stroke="url(#kg1)"/>
+              </svg>
+              <div class="ringVal" id="k1val">—</div>
+            </div>
+            <div class="ringLabel">5 小时窗口</div>
+            <div class="ringSub" id="k1sub"></div>
+          </div>
+          <div class="vline"></div>
+          <div class="ring">
+            <div class="ringWrap">
+              <svg width="84" height="84" viewBox="0 0 84 84">
+                <defs><linearGradient id="kg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" class="gs1"/><stop offset="100%" class="gs2"/></linearGradient></defs>
+                <circle cx="42" cy="42" r="32" class="track"/>
+                <circle cx="42" cy="42" r="32" class="prog" id="k2prog" stroke="url(#kg2)"/>
+              </svg>
+              <div class="ringVal" id="k2val">—</div>
+            </div>
+            <div class="ringLabel">7 天窗口</div>
+            <div class="ringSub" id="k2sub"></div>
+          </div>
+        </div>
+
+        <div class="plate">
+          <div class="plateHead"><span>近 14 天</span><span class="strong" id="c14sum"></span></div>
+          <div class="bars" id="bars"></div>
+        </div>
+
+        <div class="plate">
+          <div class="plateHead"><span>活动热力图</span><span class="strong" id="kheatDays" title="点击切换时间范围">91 天</span></div>
+          <div class="heatMonths" id="heatMonths"></div>
+          <div class="heatGrid" id="heatGrid"></div>
+          <div class="heatLegend">少<i class="hl l0"></i><i class="hl l1"></i><i class="hl l2"></i><i class="hl l3"></i><i class="hl l4"></i>多</div>
+        </div>
+
+        <div class="foot">
+          <div class="stat"><div class="statVal" id="statCost">—</div><div class="statKey">今日 花费</div></div>
+          <div class="stat"><div class="statVal" id="statTok">—</div><div class="statKey">今日 token</div></div>
+          <div class="stat right"><div class="statVal accent" id="statModel">—</div><div class="statKey" id="statShare"></div></div>
+        </div>
+      </div>
+
+      <div class="themes" id="themes"></div>
+    </section>
+
+    <!-- ── 药丸 ── -->
+    <div id="pill" class="interactive">
+      <span class="dot" id="pillDot" title="双击归位"></span>
+      <div class="meter">
+        <div class="meterTop"><span class="meterK" id="pm1k">5 小时</span><span class="meterV" id="pm1v">—</span></div>
+        <div class="meterBar"><div class="meterFill" id="pm1f"></div></div>
+      </div>
+      <div class="meter">
+        <div class="meterTop"><span class="meterK" id="pm2k">7 天</span><span class="meterV" id="pm2v">—</span></div>
+        <div class="meterBar"><div class="meterFill" id="pm2f"></div></div>
+      </div>
+      <span class="chev" id="toCard" title="展开面板">
+        <svg width="11" height="11" viewBox="0 0 12 12"><path d="M2.5 4.5 L6 8 L9.5 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </div>
+
+    <div id="bubble"></div>
+    <div id="pet-wrap" class="interactive"><canvas id="pet" width="192" height="208"></canvas></div>
+  </div>
+  <script src="pet.js"></script>
+  <script src="panel.js"></script>
+</body>
+</html>
