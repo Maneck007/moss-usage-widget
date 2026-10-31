@@ -2,7 +2,9 @@
 
 界面布局与部分样式参考 claude-usage-widget。保留其 MIT 声明如下。
 
-原个人版使用的 Codex 宠物精灵图不包含在本仓库和发行包中；本版默认图形由 Canvas 和简单几何图形绘制。
+首页效果图使用 Codex Pet 社区用户 **skerio** 发布的 MOSS 皮肤，形象来自《流浪地球》系列。来源与获取方式见 [外观配置](docs/APPEARANCE.md)。源码内置 Canvas 简约皮肤，并支持本地精灵图。
+
+本项目 MIT 许可适用于自有代码和文档文字；第三方形象与素材保留各自权利。
 
 ```text
 MIT License
